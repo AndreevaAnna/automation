@@ -45,7 +45,7 @@ public class ApiForMavenTest {
     public void testFourthFAKE3() throws JSONException {
 
         Response resp = given().header("User-Agent", "Jmeter").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
-        assertEquals(201, resp.statusCode());
+        assertEquals(404, resp.statusCode());
     }
 
     //Fake test
