@@ -25,26 +25,19 @@ public class ApiForMavenTest {
         searchField.sendKeys("puzzle");
         goButton.click();
 
+
         assert (driver.getTitle().contains("puzzle"));
         driver.quit();
     }
 //test
-    @Test
-    public void testFourth() throws JSONException {
 
-        Response resp = given().header("User-Agent23", "Jmeter54").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
+    @Test
+    public void testFourthFAKE() throws JSONException {
+        Response resp = given().header("User-Agent", "Jmeter1bbbb").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
         assertEquals(200, resp.statusCode());
-        
+        Response resp = given().header("User-Agent", "Jmeter1bbbb").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
+        assertEquals(304, resp.statusCode());
     }
-
-
-    //Fake test
-    @Test
-        public void testFourthFAKE() throws JSONException {
-
-            Response resp = given().header("User-Agent", "Jmeter1bbbb").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
-            assertEquals(201, resp.statusCode());
-        }
 
     //Fake test
     @Test
