@@ -13,7 +13,21 @@ public class ApiForMavenTest {
         Response resp = given().header("User-Agent", "Jmeter").get("https://pn.com.ua/ct/1232/?fo=693");
         assertEquals(200, resp.statusCode());
     }
+    @Test
+    public void testAmazon() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.amazon.com");
 
+        WebElement searchField = driver.findElement(By.xpath("//*[@id='twotabsearchtextbox']"));
+        WebElement goButton = driver.findElement(By.xpath("//input[@value='Go']"));
+
+        searchField.sendKeys("puzzle");
+        goButton.click();
+
+        assert (driver.getTitle().contains("puzzle"));
+        driver.quit();
+    }
 //test
     @Test
     public void testFourth() throws JSONException {
@@ -37,22 +51,6 @@ public class ApiForMavenTest {
     public void testFourthFAKE3() throws JSONException {
 
         Response resp = given().header("User-Agent", "Jmeter12").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
-        assertEquals(201, resp.statusCode());
-    }
-
-    //Fake test
-    @Test
-    public void testFourthFAKE3() throws JSONException {
-
-        Response resp = given().header("User-Agent", "Jmeter").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
-        assertEquals(404, resp.statusCode());
-    }
-
-    //Fake test
-    @Test
-    public void testFourthFAKE3() throws JSONException {
-
-        Response resp = given().header("User-Agent", "JmetertestbranchA").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
         assertEquals(201, resp.statusCode());
     }
 }
