@@ -24,14 +24,14 @@ public class ApiForMavenTest {
     @Test
     public void testThird() throws JSONException {
 
-        Response resp = given().header("User-Agent", "Jmeter").get("https://pn.com.ua/ct/1232/?fo=518-918-11214");
+        Response resp = given().header("User-Agent", "Jmeter46").get("https://pn.com.ua/ct/1232/?fo=518-918-11214");
         assertEquals(200, resp.statusCode());
     }
 
     @Test
     public void testFourth() throws JSONException {
 
-        Response resp = given().header("User-Agent", "Jmeter").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
+        Response resp = given().header("User-Agent", "Jmeter54").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
         assertEquals(200, resp.statusCode());
     }
 
@@ -40,7 +40,7 @@ public class ApiForMavenTest {
     @Test
         public void testFourthFAKE() throws JSONException {
 
-            Response resp = given().header("User-Agent", "Jmeter").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
+            Response resp = given().header("User-Agent", "Jmeter1").get("https://pn.com.ua/ct/1232/?fo=518-693-764-11214");
             assertEquals(201, resp.statusCode());
         }
 
